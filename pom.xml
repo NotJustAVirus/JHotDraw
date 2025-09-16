@@ -72,4 +72,11 @@
 	 <module>jhotdraw-datatransfer</module>
 	 <module>jhotdraw-actions</module>
 	</modules>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub NotJustAVirus Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/NotJustAVirus/JHotDraw</url>
+        </repository>
+    </distributionManagement>
 </project>
