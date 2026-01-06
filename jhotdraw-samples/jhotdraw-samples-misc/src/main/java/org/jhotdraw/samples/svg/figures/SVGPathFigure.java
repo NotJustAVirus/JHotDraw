@@ -48,12 +48,11 @@ public class SVGPathFigure extends AbstractAttributedCompositeFigure implements 
      * This cached path is used for drawing.
      */
     private transient Path2D.Double cachedPath;
-    // private transient Rectangle2D.Double cachedDrawingArea;
+
     /**
      * This is used to perform faster hit testing.
      */
     private transient Shape cachedHitShape;
-    private static final boolean DEBUG = false;
 
     /**
      * Creates a new instance.
@@ -106,34 +105,6 @@ public class SVGPathFigure extends AbstractAttributedCompositeFigure implements 
     }
 
     @Override
-    public void drawFigure(Graphics2D g) {
-        AffineTransform savedTransform = null;
-        if (get(TRANSFORM) != null) {
-            savedTransform = g.getTransform();
-            g.transform(get(TRANSFORM));
-        }
-        Paint paint = SVGAttributeKeys.getFillPaint(this);
-        if (paint != null) {
-            g.setPaint(paint);
-            drawFill(g);
-        }
-        paint = SVGAttributeKeys.getStrokePaint(this);
-        if (paint != null) {
-            g.setPaint(paint);
-            g.setStroke(SVGAttributeKeys.getStroke(this, AttributeKeys.getScaleFactorFromGraphics(g)));
-            drawStroke(g);
-        }
-        if (get(TRANSFORM) != null) {
-            g.setTransform(savedTransform);
-        }
-    }
-
-    @Override
-    protected void drawChildren(Graphics2D g) {
-        // empty
-    }
-
-    @Override
     public void drawFill(Graphics2D g) {
         g.fill(getPath());
     }
@@ -173,7 +144,6 @@ public class SVGPathFigure extends AbstractAttributedCompositeFigure implements 
         return cachedHitShape;
     }
 
-    // int count;
     @Override
     public Rectangle2D.Double getDrawingArea() {
         if (cachedDrawingArea == null) {

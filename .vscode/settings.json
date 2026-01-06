@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "itnerddk-test",
+        "projectKey": "itnerddk-test_itnerd-test"
+    }
+}
