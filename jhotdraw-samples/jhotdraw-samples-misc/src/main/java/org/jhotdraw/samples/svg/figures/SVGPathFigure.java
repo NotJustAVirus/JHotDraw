@@ -77,6 +77,11 @@ public class SVGPathFigure extends AbstractAttributedCompositeFigure implements 
         if (opacity != 0d) {
             if (opacity != 1d) {
                 Rectangle2D.Double drawingArea = getDrawingArea();
+
+                // assert that drawing area size is not negative
+                assert drawingArea.width >= 0;
+                assert drawingArea.height >= 0;
+
                 Rectangle2D clipBounds = g.getClipBounds();
                 if (clipBounds != null) {
                     Rectangle2D.intersect(drawingArea, clipBounds, drawingArea);
