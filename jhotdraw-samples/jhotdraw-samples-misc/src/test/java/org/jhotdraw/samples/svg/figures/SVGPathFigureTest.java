@@ -1,12 +1,10 @@
 package org.jhotdraw.samples.svg.figures;
 
-import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 public class SVGPathFigureTest {
