@@ -25,5 +25,17 @@ public class SVGPathFigureTest {
         assertFalse(figure.isEmpty());
     }
 
+    @Test
+    public void testContainsOnBoundary() {
+        SVGPathFigure figure = new SVGPathFigure();
+        figure.setBounds(new Point2D.Double(0, 0), new Point2D.Double(100, 0));
+
+        Point2D.Double pointOnFigure = new Point2D.Double(50.0, 1.0); 
+        Point2D.Double pointNotOnfigure = new Point2D.Double(50.0, 2.0);
+
+        assertTrue(figure.contains(pointOnFigure));
+        assertFalse(figure.contains(pointNotOnfigure));
+    }
+
     
 }
