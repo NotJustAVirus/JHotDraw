@@ -35,5 +35,18 @@ public class SVGPathFigureTest {
         assertFalse(figure.contains(pointNotOnfigure));
     }
 
+    @Test
+    public void testLineContainsOriginalPoints() {
+        SVGPathFigure figure = new SVGPathFigure();
+
+        Point2D.Double pa = new Point2D.Double(50.0, 1.0); 
+        Point2D.Double pb = new Point2D.Double(100, 0);
+
+        figure.setBounds(pa, pb);
+
+        assertTrue(figure.contains(pa));
+        assertTrue(figure.contains(pb));
+    }
+
     
 }
