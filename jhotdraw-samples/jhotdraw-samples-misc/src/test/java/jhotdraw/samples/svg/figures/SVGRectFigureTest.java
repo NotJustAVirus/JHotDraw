@@ -57,6 +57,7 @@ class SVGRectFigureTest {
 
 }
 
+
 // Needed as SVGRectFigure.drawStroke is protected
 class TestableSVGRectFigure extends SVGRectFigure {
     void callDrawStroke(Graphics2D g) {
