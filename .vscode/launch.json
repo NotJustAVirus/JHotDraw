@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "JHotDraw SVG (Java 21 + XML fix, scaled UI)",
+      "request": "launch",
+      "mainClass": "org.jhotdraw.samples.svg.Main",
+      "cwd": "${workspaceFolder}/jhotdraw-samples/jhotdraw-samples-misc",
+      "vmArgs": "-Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.transform.TransformerFactory=com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl -Dsun.java2d.uiScale=2"
+    },
+
+    {
+      "type": "java",
+      "name": "JHotDraw SVG (Java 17, scaled UI)",
+      "request": "launch",
+      "mainClass": "org.jhotdraw.samples.svg.Main",
+      "cwd": "${workspaceFolder}/jhotdraw-samples-misc",
+      "vmArgs": "-Dsun.java2d.uiScale=2"
+    }
+  ]
+}
